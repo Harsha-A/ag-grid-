@@ -22,9 +22,19 @@ class="ag-theme-balham"
 [columnDefs] = "columnDefs"
 [defaultColDef]="defaultColDef"
 rowSelection ="multiple"
-[pagination]="true"
-[paginationPageSize]="paginationPageSize"
+[rowDragManaged]="true" 
+[suppressMoveWhenRowDragging]="true"
+[animateRows]="true"
 ></ag-grid-angular>
 
 <!-- https://jsonplaceholder.typicode.com/todos/ -->
 
+<!-- Add these 2 lines of code to enable Pagination. Row Drag wont work if pagination is enabled -->
+<!-- 
+[pagination]="true"
+[paginationPageSize]="paginationPageSize" --> 
+
+<!-- Add these 3 lines of code to enable row drag. Wont work if pagination is enabled. -->
+<!-- [rowDragManaged]="true" 
+    [suppressMoveWhenRowDragging]="true"
+    [animateRows]="true" -->

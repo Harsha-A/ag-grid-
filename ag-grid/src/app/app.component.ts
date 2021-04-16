@@ -9,6 +9,8 @@ import { Subscriber } from 'rxjs';
 })
 export class AppComponent {
   title = 'ag-grid';
+  private gridApi;
+  private gridColumnApi;
   paginationPageSize = 25; // Include Pagination size attribute in html 
   // columnDefs = [
   
@@ -25,7 +27,9 @@ export class AppComponent {
       {field: "title"},
       {field: "userId"}
     ];
+
     
+
 //Example foR NOT SO GO CODING
 
 // columnDefs = [
@@ -45,6 +49,7 @@ export class AppComponent {
     resizable: true,
     filter: true,
     // rowDrag: true //make rowDrag true if u want all 4 columns to have rowDrag Else write rowDrag only for 1 column as above
+    //Note:  Row Drag wont work if pagination is enabled in html 
   };
 
   rowData :  any;
@@ -53,7 +58,9 @@ export class AppComponent {
 
   }
   
+  
   ngOnInit(){
+    
    this.getConfig()
 
     .subscribe( data =>  {
